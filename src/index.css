@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.6;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: #0A1628;
+  background: linear-gradient(135deg, #060E1A 0%, #0A1628 50%, #132238 100%);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+@layer components {
+  .input-field {
+    @apply w-full px-4 py-3 rounded-lg border border-gray-200 bg-white text-gray-800
+           placeholder:text-gray-400 transition-all duration-200
+           focus:outline-none focus:border-bank-gold focus:shadow-glow;
+  }
+
+  .btn-primary {
+    @apply w-full py-3.5 px-6 rounded-lg font-medium text-white
+           bg-gradient-to-r from-bank-navy to-bank-navyLight
+           hover:from-bank-navyLight hover:to-bank-navy
+           transition-all duration-300 transform hover:-translate-y-0.5
+           hover:shadow-cardHover active:translate-y-0;
+  }
+
+  .btn-secondary {
+    @apply px-4 py-2 rounded-lg font-medium text-bank-navy
+           bg-white border border-gray-200
+           hover:border-bank-gold hover:text-bank-gold
+           transition-all duration-200;
+  }
+
+  .card {
+    @apply bg-white rounded-xl shadow-card p-6 transition-all duration-300 hover:shadow-cardHover;
+  }
+
+  .tab-button {
+    @apply px-6 py-3 font-medium text-gray-500 border-b-2 border-transparent
+           transition-all duration-200 hover:text-bank-navyLight
+           md:min-h-[44px] md:min-w-[44px];
+  }
+
+  .tab-button-active {
+    @apply text-bank-navy border-bank-gold;
+  }
+}
+
+.gradient-mesh {
+  position: absolute;
+  width: 800px;
+  height: 800px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201, 169, 110, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(201, 169, 110, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201, 169, 110, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.glow-text {
+  text-shadow: 0 0 40px rgba(201, 169, 110, 0.3);
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
